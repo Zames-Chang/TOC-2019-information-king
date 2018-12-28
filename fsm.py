@@ -30,6 +30,8 @@ class TocMachine(GraphMachine):
     def end_gmae(self):
         self.end()
         return True
+    def for_demo(self):
+        self.demo()
     def point(self):
         point_table = {
             'point0': 0,

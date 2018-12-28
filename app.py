@@ -46,7 +46,9 @@ def webhook_handler():
                 machine_q.append(new_machine)
                 current_machine = check_exit(sender_id,machine_q)
             #print(current_machine.state)
-            
+            if(text == "demo"):
+                current_machine.for_demo()
+                send_text_message(sender_id,"demo")
             if(text == "start" and current_machine.state == "init"):
                 current_machine.start_game()
                 send_q = data['Q1']

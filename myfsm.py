@@ -8,7 +8,8 @@ def build_fsm(id):
             'point1',
             'point2',
             'point3',
-            'final'
+            'final',
+            'demo'
         ],
         transitions=[
             {
@@ -25,6 +26,22 @@ def build_fsm(id):
                     'point2',
                     'point3'
                 ],
+                'dest': 'init',
+            },
+            {
+                'trigger': 'demo',
+                'source': [
+                    'init',
+                    'point0',
+                    'point1',
+                    'point2',
+                    'point3'
+                ],
+                'dest': 'demo',
+            },
+            {
+                'trigger': 'goback',
+                'source': 'demo',
                 'dest': 'init',
             },
             {
